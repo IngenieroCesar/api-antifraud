@@ -1,0 +1,26 @@
+app:
+  version: '1.0.0'
+  port: 9001
+  moment:
+    format: 'DD/MM/yyyy HH:mm:ss'
+    tz: 'America/Bogota'
+
+logging:
+  level: info
+  directory: logs/
+  hostnameAsFileName: false
+  filename: apitransaction.log
+  transport:
+    console: true
+    file: false
+
+kafka:
+  url: localhost
+  port: 9092
+  bindings:
+    topicName:
+      sendTransactionCreated: 'sendTransactionCreated'
+      sendTransactionStatusApproved: 'sendTransactionStatusApproved'
+      sendTransactionStatusRejected: 'sendTransactionStatusRejected'
+    groupId:
+      yapeFlow: 'yape-flow2'
