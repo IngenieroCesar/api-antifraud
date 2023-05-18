@@ -15,12 +15,10 @@ logging:
     file: false
 
 kafka:
-  url: localhost
-  port: 9092
+  url: broker
+  port: 29092
   bindings:
     topicName:
       sendTransactionCreated: 'sendTransactionCreated'
       sendTransactionStatusApproved: 'sendTransactionStatusApproved'
       sendTransactionStatusRejected: 'sendTransactionStatusRejected'
-    groupId:
-      yapeFlow: 'yape-flow2'
