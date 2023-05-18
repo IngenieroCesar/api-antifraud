@@ -1,0 +1,26 @@
+app:
+  version: '1.0.0'
+  port: 9000
+  moment:
+    format: ''
+    tz: ''
+
+logging:
+  level: info
+  directory: logs/
+  hostnameAsFileName: false
+  filename: app.log
+  transport:
+    console: false
+    file: false
+
+kafka:
+  url: ''
+  port: 9092
+  bindings:
+    topicName:
+      sendTransactionCreated: 'sendTransactionCreated'
+      sendTransactionStatusApproved: 'sendTransactionStatusApproved'
+      sendTransactionStatusRejected: 'sendTransactionStatusRejected'
+    groupId:
+      yapeFlow: 'yapeFlow'
