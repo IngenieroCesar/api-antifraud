@@ -33,7 +33,7 @@ export class ValidateTransactionValue implements CommandExecutor<Transaction> {
 			const _transaction: Transaction = {
 				id: _command.id,
 				status: _command.value > TransactionConsts.maxTransactionValue ? TransactionConsts.transactionStatus.rejected : TransactionConsts.transactionStatus.approved
-			}
+			};
 			return of(_transaction).pipe(
 				tap(() => this.logger.log(`Transaction with id: [${_transaction.id}] updated succesfully.`))
 			);
